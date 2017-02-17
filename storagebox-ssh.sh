@@ -17,4 +17,8 @@ sshfs -o 'nonempty,IdentityFile=/root/.ssh/storagebox_rsa.pub,reconnect' $USER@$
 
 rsync -avz --no-o --no-g $SOURCEFOLDER $MOUNTFOLDER/$TARGETFOLDER
 
-umount $MOUNTFOLDER
+#umount $MOUNTFOLDER
+
+#Lazy umounting:
+fusermount -uz $MOUNTFOLDER
+
