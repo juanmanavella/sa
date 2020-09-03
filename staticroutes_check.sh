@@ -16,7 +16,7 @@ LASTMAIL="/tmp/$1_lastmail-$DT.txt"
 > $LASTLOG
 
 # Monitor only non routable address space:
-traceroute -n $IP | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' |  grep -E "192\.168|10\." | grep -v 10.0.0.1 >> $LASTLOG
+traceroute -n $IP | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' |  grep -E "192\.168|10\.|172\.16" >> $LASTLOG
 
 
 if cmp -s "$LASTLOG" "$LASTMAIL"; then
