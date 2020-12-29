@@ -23,7 +23,7 @@ date >> $LOG
 modprobe nbd >> $LOG
 qemu-nbd -c $VDEVICE $VHDD -r >> $LOG
 mount -o ro $VPARTITION $LOCAL_MOUNT >> $LOG
-rdiff-backup --exclude $LOCAL_MOUNT System\ Volume\ Information $LOCAL_MOUNT $LOCAL_BACKUP >> $LOG
+rdiff-backup --exclude $LOCAL_MOUNT/System\ Volume\ Information $LOCAL_MOUNT $LOCAL_BACKUP >> $LOG
 rsync -a --no-p $LOCAL_BACKUP $CLOUD_BACKUP >> $LOG
 sync
 umount LOCAL_MOUNT >> $LOG
