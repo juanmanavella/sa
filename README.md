@@ -1,1 +1,2 @@
-# Sys Admin Stuff
+# System Administration
+Related stuff intended for personal usage mostly.
